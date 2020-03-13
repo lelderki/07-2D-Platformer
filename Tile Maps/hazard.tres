@@ -1,0 +1,206 @@
+[gd_resource type="TileSet" load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Retina/platformIndustrial_008.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Retina/platformIndustrial_001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Retina/platformIndustrial_049.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Retina/platformIndustrial_019.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Retina/platformIndustrial_106.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Retina/platformIndustrial_052.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Retina/platformIndustrial_068.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Retina/platformIndustrial_051.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Retina/platformIndustrial_066.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Retina/platformIndustrial_050.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Retina/platformIndustrial_038.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70, 70 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128, 180 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 70, 80 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 70, 70 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 70, 70 )
+
+[resource]
+0/name = "top"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 140, 140 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 70, 70 )
+0/navigation_offset = Vector2( 70, 70 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 70, 70 )
+} ]
+0/z_index = 0
+1/name = "mid"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 140, 140 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 70, 70 )
+1/navigation_offset = Vector2( 70, 70 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 70, 70 )
+} ]
+1/z_index = 0
+2/name = "half"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 140, 140 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 70, 70 )
+2/navigation_offset = Vector2( 70, 70 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 40 )
+} ]
+2/z_index = 0
+3/name = "downspike"
+3/texture = ExtResource( 11 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 140, 140 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 70, 70 )
+3/navigation_offset = Vector2( 70, 70 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 35 )
+} ]
+3/z_index = 0
+4/name = "midbeam"
+4/texture = ExtResource( 10 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 140, 140 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 70, 70 )
+4/navigation_offset = Vector2( 70, 70 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 35 )
+} ]
+4/z_index = 0
+5/name = "leftbeam"
+5/texture = ExtResource( 3 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 140, 140 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 70, 70 )
+5/navigation_offset = Vector2( 70, 70 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 35 )
+} ]
+5/z_index = 0
+6/name = "rightbeam"
+6/texture = ExtResource( 8 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 140, 140 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 70, 70 )
+6/navigation_offset = Vector2( 70, 70 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 35 )
+} ]
+6/z_index = 0
+7/name = "upspike"
+7/texture = ExtResource( 6 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 140, 140 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 70, 70 )
+7/navigation_offset = Vector2( 70, 70 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 105 )
+} ]
+7/z_index = 0
+8/name = "gate"
+8/texture = ExtResource( 9 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 140, 140 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 70, 70 )
+8/navigation_offset = Vector2( 70, 70 )
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 0.5, 70, 35 )
+} ]
+8/z_index = 0
+9/name = "cut"
+9/texture = ExtResource( 7 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 140, 140 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 70, 70 )
+9/navigation_offset = Vector2( 70, 70 )
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 0.975238, 0, 0, 0.609524, 70, 102 )
+} ]
+9/z_index = 0
+10/name = "toxic"
+10/texture = ExtResource( 5 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 140, 140 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 70, 70 )
+10/navigation_offset = Vector2( 70, 70 )
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 0.5, 0, 0, 0.5, 70, 70 )
+} ]
+10/z_index = 0
