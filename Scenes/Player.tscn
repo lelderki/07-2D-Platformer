@@ -1,14 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/droid_from_android.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 24 )
+extents = Vector2( 10, 20.95 )
 
-[sub_resource type="CircleShape2D" id=2]
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -23,7 +21,7 @@ tracks/0/keys = {
 "values": [ Rect2( 4, 8, 49, 78 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -38,7 +36,7 @@ tracks/0/keys = {
 "values": [ Rect2( -1, 560, 51, 85 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "walk"
 step = 3.0
 tracks/0/type = "value"
@@ -54,24 +52,39 @@ tracks/0/keys = {
 "values": [ Rect2( 4, 8, 49, 78 ), Rect2( 57, 90, 53, 70 ), Rect2( 4, 8, 49, 78 ), Rect2( 57, 90, 53, 70 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 13.05, 24.7 )
+
+[sub_resource type="RayShape2D" id=6]
+length = 25.0
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 15.3893 )
-shape = SubResource( 2 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.362106, 8.14726 )
+position = Vector2( 0, 3 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( -1, 560, 51, 85 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 3 )
-anims/jump = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/idle = SubResource( 2 )
+anims/jump = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource( 5 )
+
+[node name="HitHead" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitHead"]
+rotation = 3.14159
+shape = SubResource( 6 )
+[connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
+[connection signal="body_entered" from="HitHead" to="." method="_on_HitHead_body_entered"]

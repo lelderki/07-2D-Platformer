@@ -55,7 +55,7 @@ animation = "idle"
 [node name="HUD" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="Health" type="Label" parent="HUD"]
 margin_left = 54.6576
 margin_top = 18.0822
 margin_right = 94.6577
@@ -65,3 +65,4 @@ text = "HEALTH: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
