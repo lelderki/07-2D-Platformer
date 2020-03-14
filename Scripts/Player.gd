@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 500
+const MOVE_SPEED = 100
 const JUMP_FORCE = 1000
 const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
@@ -31,10 +31,10 @@ func die():
 
 func _physics_process(delta):
 	var move_dir = 0 
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_pressed("move_right"):
 		move_dir += 1.5
 		y_velo += acceleration
-	if Input.is_action_just_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		move_dir -= 1.5
 		y_velo -= acceleration
 	move_and_slide(Vector2(move_dir * MOVE_SPEED, y_velo), Vector2(0,-1))
@@ -51,7 +51,7 @@ func _physics_process(delta):
 		flip()
 	if !facing_right and move_dir < 0:
 		flip()
-#figure out why it wont flip back in videdo find code for this part #9:03???
+	#figure out why it wont flip back in videdo find code for this part #9:03???
 	if grounded:
 		if move_dir == 0:
 			play_anim("idle")
@@ -71,3 +71,13 @@ func play_anim(anim_name):
 
 
 #9:41
+
+
+func _on_HitBox_body_entered(body):
+	if body.get_parent().name == 'Enemies':
+		change_health(-10)
+
+
+func _on_HitHead_body_entered(body):
+	if body.name == 'Walls':
+		y_velo = 0
