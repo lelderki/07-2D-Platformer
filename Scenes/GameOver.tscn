@@ -3,11 +3,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-margin_left = 168.189
-margin_top = 12.5581
-margin_right = 244.189
-margin_bottom = 26.5581
-text = "GAME OVER"
+margin_left = 346.38
+margin_top = 204.766
+margin_right = 640.38
+margin_bottom = 361.766
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game Over :("
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

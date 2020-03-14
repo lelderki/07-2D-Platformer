@@ -1,68 +1,52 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tile Maps/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/slime_squashed.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Ememy_0.gd" type="Script" id=4]
-[ext_resource path="res://Assets/slime_walk.png" type="Texture" id=5]
-[ext_resource path="res://Assets/slime.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/HUD.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Enemies.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24.7185, 16.7965 )
+[node name="World" type="Node2D" groups=[
+"Persist",
+]]
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
-} ]
-
-[node name="World" type="Node2D"]
-
-[node name="Walls" type="TileMap" parent="."]
+[node name="Walls" type="TileMap" parent="." groups=[
+"Persist",
+]]
 tile_set = ExtResource( 1 )
 collision_bounce = 1.0
 format = 1
 tile_data = PoolIntArray( 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131085, 0, 0, 196608, 0, 0, 196609, 0, 0, 196612, 0, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 262144, 1, 0, 262145, 1, 0, 262154, 0, 0, 262155, 0, 0, 262159, 0, 0, 327680, 1, 0, 327681, 1, 0, 327683, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327690, 1, 0, 327691, 1, 0, 327694, 0, 0, 327695, 1, 0, 393216, 1, 0, 393217, 1, 0, 393230, 1, 0, 393231, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 1, 0, 458767, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 54.7274, 165.967 )
+[node name="Player" parent="." groups=[
+"Persist",
+] instance=ExtResource( 2 )]
+position = Vector2( 29.1883, 166.482 )
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" parent="." instance=ExtResource( 3 )]
 
-[node name="Ememy_0" type="KinematicBody2D" parent="Enemies"]
-position = Vector2( 576.512, 429.119 )
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Ememy_0"]
-shape = SubResource( 1 )
+[node name="WorldComplete" parent="." instance=ExtResource( 4 )]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Ememy_0"]
-scale = Vector2( -1, 1 )
-frames = SubResource( 2 )
-animation = "idle"
+[node name="Buttons" type="Node" parent="."]
 
-[node name="HUD" type="Node2D" parent="."]
-script = ExtResource( 7 )
-
-[node name="Health" type="Label" parent="HUD"]
-margin_left = 54.6576
-margin_top = 18.0822
-margin_right = 94.6577
-margin_bottom = 32.0822
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "HEALTH: "
+[node name="Save" type="Button" parent="Buttons"]
+margin_left = 974.524
+margin_top = 7.06661
+margin_right = 1017.52
+margin_bottom = 27.0666
+text = "SAVE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
+
+[node name="Load" type="Button" parent="Buttons"]
+margin_left = 969.162
+margin_top = 33.4635
+margin_right = 1018.16
+margin_bottom = 53.4635
+text = "LOAD"
+__meta__ = {
+"_edit_use_anchors_": false
+}

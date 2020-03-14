@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Win" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 417.947
+margin_top = 57.0531
+margin_right = 596.947
+margin_bottom = 71.0531
+text = "You won! Thanks for playing!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

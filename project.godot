@@ -19,6 +19,10 @@ config/name="Template"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SaveSystem="*res://Scenes/SaveSystem.tscn"
+
 [input]
 
 move_left={
