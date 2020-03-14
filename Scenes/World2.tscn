@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tile Maps/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/WorldComplete2.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/pieceYellow_border17.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Particles2D.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.0309, 19.6956 )
@@ -45,3 +46,5 @@ shape = SubResource( 1 )
 [node name="flag" type="Sprite" parent="WorldComplete"]
 position = Vector2( 1.03162, 1.89374 )
 texture = ExtResource( 6 )
+
+[node name="Particles2D" parent="." instance=ExtResource( 7 )]
