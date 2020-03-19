@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tile Maps/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://Scenes/WorldComplete.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Particles2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/World.gd" type="Script" id=7]
 
 [node name="World" type="Node2D" groups=[
 "Persist",
 ]]
+script = ExtResource( 7 )
 
 [node name="Walls" type="TileMap" parent="." groups=[
 "Persist",
@@ -31,26 +33,5 @@ position = Vector2( -413.212, 0 )
 
 [node name="WorldComplete" parent="." instance=ExtResource( 4 )]
 
-[node name="Buttons" type="Node" parent="."]
-
-[node name="Save" type="Button" parent="Buttons"]
-margin_left = 974.524
-margin_top = 7.06661
-margin_right = 1017.52
-margin_bottom = 27.0666
-text = "SAVE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Load" type="Button" parent="Buttons"]
-margin_left = 969.162
-margin_top = 33.4635
-margin_right = 1018.16
-margin_bottom = 53.4635
-text = "LOAD"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Particles2D" parent="." instance=ExtResource( 6 )]
+[connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]

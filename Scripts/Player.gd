@@ -9,7 +9,6 @@ onready var anim_player = $AnimationPlayer
 onready var sprite = $Sprite
 
 export var acceleration = 0.1
-export var health = 100
 
 var y_velo = 0 
 var facing_right = false 
@@ -20,9 +19,9 @@ func _ready():
 	emit_signal("health_changed")
 
 func change_health(h):
-	health += h
+	get_node("/root/SaveSystem").updateHealth(h)
 	emit_signal("health_changed")
-	if health <= 0:
+	if get_node("/root/SaveSystem").health <= 0:
 		die()
 
 func die():
@@ -74,7 +73,7 @@ func play_anim(anim_name):
 
 
 func _on_HitBox_body_entered(body):
-	if body.get_parent().name == 'Enemies':
+	if body.get_parent().name.substr(0,7) == 'Enemies':
 		change_health(-10)
 
 
