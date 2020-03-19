@@ -19,3 +19,25 @@ text = "HEALTH: "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Save" type="Button" parent="."]
+margin_left = 976.0
+margin_top = 8.0
+margin_right = 1017.0
+margin_bottom = 28.0
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="."]
+margin_left = 976.0
+margin_top = 34.0
+margin_right = 1017.0
+margin_bottom = 54.0
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_Load_pressed"]
